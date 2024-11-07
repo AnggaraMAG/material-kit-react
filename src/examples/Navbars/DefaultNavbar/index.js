@@ -42,6 +42,9 @@ import DefaultNavbarMobile from "examples/Navbars/DefaultNavbar/DefaultNavbarMob
 
 // Material Kit 2 React base styles
 import breakpoints from "assets/theme/base/breakpoints";
+import logoSurvey from "assets/images/ID Survey.png";
+import logoKemenKoordinasi from "assets/images/Kementrian Koordinasi.png";
+import logoKemenPertanian from "assets/images/Kementrian Pertanian.png";
 
 function DefaultNavbar({ brand, routes, transparent, light, action, sticky, relative, center }) {
   const [dropdown, setDropdown] = useState("");
@@ -480,6 +483,12 @@ function DefaultNavbar({ brand, routes, transparent, light, action, sticky, rela
               {brand}
             </MKTypography>
           </MKBox>
+          <div style={{ display: "flex", alignItems: "center", gap: "5px" }}>
+            <img src={logoKemenKoordinasi} alt="id-survey" height={55} width={55} />
+            <img src={logoKemenPertanian} alt="id-survey" height={55} width={55} />
+            <img src={logoSurvey} alt="id-survey" height={55} width={55} />
+          </div>
+
           <MKBox
             color="inherit"
             display={{ xs: "none", lg: "flex" }}
@@ -551,7 +560,7 @@ function DefaultNavbar({ brand, routes, transparent, light, action, sticky, rela
 
 // Setting default values for the props of DefaultNavbar
 DefaultNavbar.defaultProps = {
-  brand: "Material Kit 2",
+  brand: "",
   transparent: false,
   light: false,
   action: false,

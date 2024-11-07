@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /*
 =========================================================
 * Material Kit 2 React - v2.1.0
@@ -45,20 +46,42 @@ import footerRoutes from "footer.routes";
 
 // Images
 import bgImage from "assets/images/bg-presentation.jpg";
+import Documentations from "./sections/Documentations";
+import ScoreCard from "./sections/ScoreCard";
+import Article from "./sections/Article";
+import Clients from "./sections/Clients";
 
+const articles = [
+  {
+    id: 1,
+    title: "Lorem Ipsum 1",
+    content:
+      "unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+  },
+  {
+    id: 2,
+    title: "Lorem Ipsum 2",
+    content:
+      "unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+  },
+  {
+    id: 3,
+    title: "Lorem Ipsum 3",
+    content:
+      "unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+  },
+  {
+    id: 3,
+    title: "Lorem Ipsum 3",
+    content:
+      "unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+  },
+  // Add as many articles as needed
+];
 function Presentation() {
   return (
     <>
-      <DefaultNavbar
-        routes={routes}
-        action={{
-          type: "external",
-          route: "https://www.creative-tim.com/product/material-kit-react",
-          label: "free download",
-          color: "info",
-        }}
-        sticky
-      />
+      <DefaultNavbar routes={routes} sticky />
       <MKBox
         minHeight="75vh"
         width="100%"
@@ -83,9 +106,9 @@ function Presentation() {
                 },
               })}
             >
-              Material Kit 2 React{" "}
+              Nasional Dashboard
             </MKTypography>
-            <MKTypography
+            {/* <MKTypography
               variant="body1"
               color="white"
               textAlign="center"
@@ -94,7 +117,7 @@ function Presentation() {
             >
               Free & Open Source Web UI Kit built over ReactJS &amp; MUI. Join over 1.6 million
               developers around the world.
-            </MKTypography>
+            </MKTypography> */}
           </Grid>
         </Container>
       </MKBox>
@@ -109,14 +132,54 @@ function Presentation() {
           boxShadow: ({ boxShadows: { xxl } }) => xxl,
         }}
       >
-        <Counters />
-        <Information />
-        <DesignBlocks />
-        <Pages />
-        <Container sx={{ mt: 6 }}>
-          <BuiltByDevelopers />
-        </Container>
+        <Documentations />
+        <ScoreCard />
         <Container>
+          <Grid
+            container
+            item
+            xs={12}
+            lg={6}
+            flexDirection="column"
+            alignItems="center"
+            sx={{ textAlign: "center", my: 6, mx: "auto", px: 0.75 }}
+          >
+            <MKTypography variant="h2" fontWeight="bold">
+              Lorem Ipsum
+            </MKTypography>
+          </Grid>
+        </Container>
+        <Clients />
+        <Container>
+          <Grid
+            container
+            item
+            xs={12}
+            lg={6}
+            flexDirection="column"
+            alignItems="center"
+            sx={{ textAlign: "center", my: 6, mx: "auto", px: 0.75 }}
+          >
+            <MKTypography variant="h2" fontWeight="bold">
+              Lorem Ipsum
+            </MKTypography>
+          </Grid>
+        </Container>
+        <Grid container spacing={0} justifyContent="center">
+          {articles.map((article) => (
+            <Grid item xs={12} sm={6} md={6} key={article.id}>
+              <Article title={article.title} content={article.content} />
+            </Grid>
+          ))}
+        </Grid>
+        {/* <AccordionTransition /> */}
+        {/* <Information /> */}
+        {/* <DesignBlocks /> */}
+        {/* <Pages /> */}
+        {/* <Container sx={{ mt: 6 }}>
+          <BuiltByDevelopers />
+        </Container> */}
+        {/* <Container>
           <Grid container spacing={3}>
             <Grid item xs={12} lg={4}>
               <FilledInfoCard
@@ -159,10 +222,10 @@ function Presentation() {
               />
             </Grid>
           </Grid>
-        </Container>
-        <Testimonials />
-        <Download />
-        <MKBox pt={18} pb={6}>
+        </Container> */}
+        {/* <Testimonials /> */}
+        {/* <Download /> */}
+        {/* <MKBox pt={18} pb={6}>
           <Container>
             <Grid container spacing={3}>
               <Grid item xs={12} lg={5} ml="auto" sx={{ textAlign: { xs: "center", lg: "left" } }}>
@@ -213,11 +276,11 @@ function Presentation() {
               </Grid>
             </Grid>
           </Container>
-        </MKBox>
+        </MKBox> */}
       </Card>
-      <MKBox pt={6} px={1} mt={6}>
+      {/* <MKBox pt={6} px={1} mt={6}>
         <DefaultFooter content={footerRoutes} />
-      </MKBox>
+      </MKBox> */}
     </>
   );
 }
